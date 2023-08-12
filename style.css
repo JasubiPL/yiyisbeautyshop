@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(./img/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: opacity 1s ease;
+}
+
+main{
+  width: 80vw;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50px);
+  align-items: center;
+  gap: 20px;
+
+  & img{
+    width: 80%;
+  }
+
+  & .loading-bar{
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & div{
+      width: 100%;
+      height: 100%;
+      background-color: palevioletred;
+      border-radius: 10px;
+      animation: load 1.5s ease-in-out;
+    }
+  }
+  & p{
+    color: palevioletred;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+@keyframes load {
+  0%{
+    width: 0%;
+  }
+
+  30%{
+    width: 30%;
+  }
+
+  50%{
+    width: 35%;
+  }
+
+  100%{
+    width: 100%;
+  }
+}
+
+@keyframes opacity {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}

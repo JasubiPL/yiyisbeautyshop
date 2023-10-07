@@ -1,82 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
 *{
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
 body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url(./img/background.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: opacity 1s ease;
+  background-color: #000;
+}
+.header{
+  width: 100%;
+  padding: 20px 50px;
+  background-color: black;
 }
 
-main{
-  width: 80vw;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  transform: translateY(-50px);
-  align-items: center;
-  gap: 20px;
+.logo{
+  height: 40px;
+  animation: alpha 1s ;
+}
 
+.banner{
+  padding: 0;
+  width: 100%;
+  animation: alpha 1s ;
   & img{
-    width: 80%;
-  }
-
-  & .loading-bar{
     width: 100%;
-    height: 15px;
-    border-radius: 10px;
-    overflow: hidden;
+  }
+}
 
-    & div{
-      width: 100%;
-      height: 100%;
-      background-color: palevioletred;
-      border-radius: 10px;
-      animation: load 1.5s ease-in-out;
+.categories{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  animation: alpha 5s ;
+  & a{
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    & h2{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-align: center;
+      color: #faf03d;
+      font-size: 3vw;
+      max-width: 80%;
     }
   }
-  & p{
-    color: palevioletred;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 36px;
-    font-family: 'Great Vibes', cursive;
+
+
+  & .fragance{
+    background-image: url(./img/perfumes.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  & .skin{
+    background-image: url(./img/cuidado-de-piel.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  & .nutrition{
+    background-image: url(./img/suplements.jpg);
+    background-position: center;
+    background-size: cover;
   }
 }
 
-@keyframes load {
-  0%{
-    width: 0%;
-  }
+footer{
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  & ul {
+    display: flex;
+    gap: 50px;
 
-  30%{
-    width: 30%;
-  }
-
-  50%{
-    width: 35%;
-  }
-
-  100%{
-    width: 100%;
+    & svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+    }
   }
 }
 
-@keyframes opacity {
-  0%{
+@media screen and (max-width:600px) {
+  .header{
+    display: flex;
+    justify-content: center;
+  }
+  .categories{
+    grid-template-columns: 1fr;
+  }
+
+  .categories a h2{
+    font-size: 7vw;
+  }
+}
+
+@keyframes alpha {
+  from{
     opacity: 0;
   }
-
-  100%{
+  top{
     opacity: 1;
   }
 }
